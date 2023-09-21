@@ -1,11 +1,9 @@
 package co.edu.udea.compumovil.gr02_20232.lab1
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -32,7 +30,7 @@ enum class LabScreen(@StringRes val title: Int) {
     ContactData(title = R.string.contact_data),
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
 fun Lab1App(
     navController: NavHostController = rememberNavController()
