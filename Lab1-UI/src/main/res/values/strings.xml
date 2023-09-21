@@ -2,4 +2,6 @@
     <string name="app_name">Labs20232-Gr02</string>
     <string name="contact_data">Contact Data</string>
     <string name="personal_data">Personal Data</string>
+    <string name="back_button">Back</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
