@@ -54,7 +54,9 @@ fun Lab1App(
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(route = LabScreen.PersonalData.name) {
-                PersonalDataScreen()
+                PersonalDataScreen(onNextButtonClicked = {
+                    navController.navigate(LabScreen.ContactData.name)
+                })
             }
             composable(route = LabScreen.ContactData.name) {
                 ContactDataScreen()
