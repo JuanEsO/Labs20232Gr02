@@ -50,7 +50,7 @@ fun Lab1App(
     ) {innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = LabScreen.PersonalData.name,
+            startDestination = LabScreen.ContactData.name,
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(route = LabScreen.PersonalData.name) {

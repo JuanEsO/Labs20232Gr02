@@ -1,12 +1,16 @@
 package co.edu.udea.compumovil.gr02_20232.lab1.ui.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
@@ -28,12 +32,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import co.edu.udea.compumovil.gr02_20232.lab1.R
 
@@ -57,36 +63,42 @@ fun ContactDataScreen(
             var city by remember { mutableStateOf("") }
 
             Row(
-                modifier = Modifier.padding(5.dp, 5.dp)
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.height(70.dp)
             ) {
                 Icon(
                     imageVector = Icons.Filled.Call,
                     contentDescription = stringResource(R.string.back_button),
-                    modifier = Modifier
-                        .height(25.dp)
-                        .width(25.dp)
-                        .align(Alignment.CenterVertically)
+                    modifier = Modifier.width(35.dp)
                 )
+
+                Spacer(modifier = Modifier.width(10.dp))
 
                 OutlinedTextField(
                     value = phone,
+
                     onValueChange = { phone = it },
                     label = { Text("Phone") },
                     maxLines = 1,
-                    textStyle = TextStyle(color = Color.Blue, fontWeight = FontWeight.Bold),
+                    textStyle = TextStyle(
+                        color = Color.Blue,
+                        fontWeight = FontWeight.Bold,
+                        background = Color.Blue
+                        ),
+                    modifier = Modifier.width(200.dp)
                 )
             }
             Row(
-                modifier = Modifier.padding(5.dp, 5.dp)
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.height(70.dp)
             ) {
                 Icon(
                     imageVector = Icons.Filled.Email,
                     contentDescription = stringResource(R.string.back_button),
-                    modifier = Modifier
-                        .height(25.dp)
-                        .width(25.dp)
-                        .align(Alignment.CenterVertically)
+                    modifier = Modifier.width(35.dp)
                 )
+
+                Spacer(modifier = Modifier.width(10.dp))
 
                 OutlinedTextField(
                     value = email,
@@ -94,19 +106,20 @@ fun ContactDataScreen(
                     label = { Text("Email") },
                     maxLines = 1,
                     textStyle = TextStyle(color = Color.Blue, fontWeight = FontWeight.Bold),
+                    modifier = Modifier.width(200.dp)
                 )
             }
             Row(
-                modifier = Modifier.padding(5.dp, 5.dp)
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.height(70.dp)
             ) {
                 Icon(
                     imageVector = Icons.Filled.Home,
                     contentDescription = stringResource(R.string.back_button),
-                    modifier = Modifier
-                        .height(25.dp)
-                        .width(25.dp)
-                        .align(Alignment.CenterVertically)
+                    modifier = Modifier.width(35.dp)
                 )
+
+                Spacer(modifier = Modifier.width(10.dp))
 
                 OutlinedTextField(
                     value = country,
@@ -114,20 +127,20 @@ fun ContactDataScreen(
                     label = { Text("Country") },
                     maxLines = 1,
                     textStyle = TextStyle(color = Color.Blue, fontWeight = FontWeight.Bold),
-
+                    modifier = Modifier.width(200.dp)
                 )
             }
             Row(
-                modifier = Modifier.padding(5.dp, 5.dp)
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.height(70.dp)
             ) {
                 Icon(
                     imageVector = Icons.Filled.Place,
                     contentDescription = stringResource(R.string.back_button),
-                    modifier = Modifier
-                        .height(25.dp)
-                        .width(25.dp)
-                        .align(Alignment.CenterVertically)
+                    modifier = Modifier.width(35.dp)
                 )
+
+                Spacer(modifier = Modifier.width(10.dp))
 
                 OutlinedTextField(
                     value = city,
@@ -135,19 +148,20 @@ fun ContactDataScreen(
                     label = { Text("City") },
                     maxLines = 1,
                     textStyle = TextStyle(color = Color.Blue, fontWeight = FontWeight.Bold),
+                    modifier = Modifier.width(200.dp)
                 )
             }
             Row(
-                modifier = Modifier.padding(5.dp, 5.dp)
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.height(70.dp)
             ) {
                 Icon(
                     imageVector = Icons.Filled.AccountBox,
                     contentDescription = stringResource(R.string.back_button),
-                    modifier = Modifier
-                        .height(25.dp)
-                        .width(25.dp)
-                        .align(Alignment.CenterVertically)
+                    modifier = Modifier.width(35.dp)
                 )
+
+                Spacer(modifier = Modifier.width(10.dp))
 
                 OutlinedTextField(
                     value = address,
@@ -155,25 +169,26 @@ fun ContactDataScreen(
                     label = { Text("Address") },
                     maxLines = 1,
                     textStyle = TextStyle(color = Color.Blue, fontWeight = FontWeight.Bold),
+                    modifier = Modifier.width(200.dp)
                 )
             }
         }
         Row(modifier = Modifier.weight(1f, false)) {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp, 5.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(
-                        dimensionResource(id = R.dimen.padding_medium)
-                        )
+                    .fillMaxSize()
+                    .padding(15.dp),
+                horizontalAlignment = Alignment.End,
+                verticalArrangement = Arrangement.SpaceBetween
             ) {
+                Spacer(modifier = Modifier.height(20.dp))
                 Button(
-                    onClick = onNextButtonClicked,
-                    modifier = modifier.widthIn(min = 150.dp)
+                    onClick = onNextButtonClicked
                 ) {
                     Text("Finalizar")
                 }
+                Spacer(modifier = Modifier.height(450.dp))
+
             }
         }
     }
