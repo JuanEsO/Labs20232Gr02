@@ -349,10 +349,9 @@ fun validateForm(name: String, lastName: String, birthDate: String, education: S
 fun logData(name: String, lastName: String, gender: String? = null, birthDate: String, education: String) {
     val tag = "[RESULT]"
     Log.i(tag, "Información personal: ")
-    Log.i(tag, "Nombre: $name")
-    Log.i(tag, "Apellido: $lastName")
-    if (gender != null) Log.i(tag, "Genero: $gender")
-    Log.i(tag, "Fecha de Nacimiento: $birthDate")
+    Log.i(tag, "$name $lastName")
+    if (gender != null) Log.i(tag, "$gender")
+    Log.i(tag, "Nacio el $birthDate")
     Log.i(tag, "Educacion: $education")
 }
 
