@@ -1,7 +1,26 @@
 <resources>
     <string name="app_name">Labs20232-Gr02</string>
-    <string name="contact_data">Contact Data</string>
+    <string name="contact_data">Informacuón de contacto</string>
     <string name="personal_data">Información personal</string>
-    <string name="back_button">Back</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="back_button">Atrás</string>
+    <string name="title_activity_main">Actividad principal</string>
+    <string name="education">Educación</string>
+    <string name="names">Nombres</string>
+    <string name="lastName">Apellidos</string>
+    <string name="gender">Género:</string>
+    <string name="male">M</string>
+    <string name="female">Femenino</string>
+    <string name="birth">Fecha de nacimiento</string>
+    <string name="primary">Primaria</string>
+    <string name="high">Secundaria</string>
+    <string name="university">Universidad</string>
+    <string name="other">Otro</string>
+    <string name="change">Cambiar</string>
+    <string name="next">Siguiente</string>
+    <string name="phone">Teléfono</string>
+    <string name="email">Correo electrónico</string>
+    <string name="country">País</string>
+    <string name="city">Ciudad</string>
+    <string name="address">Dirección</string>
+    <string name="finish">Finalizar</string>
 </resources>

@@ -52,6 +52,7 @@ import co.edu.udea.compumovil.gr02_20232.lab1.R
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import java.util.Calendar
 import java.util.Date
 
@@ -64,8 +65,8 @@ fun PersonalDataScreen(
         .height(1000.dp)
         .verticalScroll(rememberScrollState())
 ) {
-    val options = listOf("Primaria", "Secundaria", "Universidad", "Otro")
-    val items = listOf<String>("ninguno", "Hombre", "Mujer")
+    val options = listOf(stringResource(id = R.string.primary), stringResource(id = R.string.high), stringResource(id = R.string.university), stringResource(id = R.string.other))
+    val items = listOf<String>(stringResource(id = R.string.other), stringResource(id = R.string.male), stringResource(id = R.string.female))
 
     var name by remember { mutableStateOf(TextFieldValue("")) }
     var lastname by remember { mutableStateOf(TextFieldValue("")) }
@@ -110,7 +111,7 @@ fun PersonalDataScreen(
                     tint = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(25.dp)
                 ) },
-                label = { Text(text = "Nombres") },
+                label = { Text(text = stringResource(id = R.string.names)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Text,
                     imeAction = keyboardImmeActionCustom,
@@ -136,7 +137,7 @@ fun PersonalDataScreen(
                     tint = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(25.dp)
                 ) },
-                label = { Text(text = "Apellidos") },
+                label = { Text(text = stringResource(id = R.string.lastName)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Text,
                     imeAction = keyboardImmeActionCustom,
@@ -163,7 +164,7 @@ fun PersonalDataScreen(
                     modifier = Modifier.size(25.dp)
                 )
                 Spacer(modifier = Modifier.size(10.dp))
-                Text(text = "Sexo: ", modifier = Modifier.padding(end = 20.dp))
+                Text(text = stringResource(id = R.string.gender), modifier = Modifier.padding(end = 20.dp))
                 items.forEachIndexed { index, item ->
                     if (index != 0) {
                         CircleSelect(
@@ -197,7 +198,7 @@ fun PersonalDataScreen(
             .fillMaxWidth()
             .padding(vertical = 50.dp)) {
             Button(onClick = { onNext() }, modifier = Modifier.defaultMinSize(100.dp)) {
-                Text(text = "Next")
+                Text(text = stringResource(id = R.string.next))
             }
         }
     }
@@ -260,7 +261,7 @@ fun DatePickerInput(mDate: MutableState<String>) {
     val label = if (mDate.value.isNotEmpty()) {
         "${mDate.value}"
     } else {
-        "Fecha de nacimiento"
+        stringResource(id = R.string.birth)
     }
     Row(
         modifier = Modifier
@@ -280,7 +281,7 @@ fun DatePickerInput(mDate: MutableState<String>) {
             Text(text = label)
         }
         Button(onClick = { mDatePickerDialog.show() }, modifier = Modifier.padding(end = 20.dp)) {
-            Text(text = "Cambiar")
+            Text(text = stringResource(id = R.string.change))
         }
     }
 }
@@ -302,7 +303,7 @@ fun DropdownMenu(options: List<String>, selectedOption: String, onChangeOption: 
             readOnly = true,
             value = selectedOption,
             onValueChange = { },
-            label = { Text("Educacion", Modifier.background(Color.Transparent)) },
+            label = { Text(stringResource(id = R.string.education), Modifier.background(Color.Transparent)) },
             leadingIcon = {
                 Icon(
                     painter = painterResource(id = R.drawable.baseline_menu_book_24),

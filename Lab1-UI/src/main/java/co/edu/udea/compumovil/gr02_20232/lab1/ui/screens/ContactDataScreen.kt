@@ -105,7 +105,7 @@ fun ContactDataScreen(
                     tint = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(25.dp)
                 ) },
-                label = { Text(text = "Phone") },
+                label = { Text(text = stringResource(id = R.string.phone)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Number,
                     imeAction = keyboardImmeActionCustom,
@@ -134,7 +134,7 @@ fun ContactDataScreen(
                     modifier = Modifier.size(25.dp)
                 ) },
                 isError = !isEmailValid,
-                label = { Text(text = "Email") },
+                label = { Text(text = stringResource(id = R.string.email)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Email,
                     imeAction = keyboardImmeActionCustom,
@@ -160,7 +160,7 @@ fun ContactDataScreen(
                     tint = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(25.dp)
                 ) },
-                label = { Text(text = "Pais") },
+                label = { Text(text = stringResource(id = R.string.country)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Text,
                     imeAction = keyboardImmeActionCustom,
@@ -189,7 +189,7 @@ fun ContactDataScreen(
                     tint = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(25.dp)
                 ) },
-                label = { Text(text = "Ciudad") },
+                label = { Text(text = stringResource(id = R.string.city)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Text,
                     imeAction = keyboardImmeActionCustom,
@@ -215,7 +215,7 @@ fun ContactDataScreen(
                     tint = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(25.dp)
                 ) },
-                label = { Text(text = "Direccion") },
+                label = { Text(text = stringResource(id = R.string.address)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Text,
                     imeAction = keyboardImmeActionCustom,
@@ -230,27 +230,13 @@ fun ContactDataScreen(
                     .fillMaxWidth()
                     .padding(bottom = 10.dp, top = 20.dp)
             )
-
-
-        }
-        Row(modifier = Modifier.weight(1f, false)) {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(15.dp),
-                horizontalAlignment = Alignment.End,
-                verticalArrangement = Arrangement.SpaceBetween
+            Button(
+                enabled = isFormFill,
+                onClick = { onNext() }
             ) {
-                Spacer(modifier = Modifier.height(20.dp))
-                Button(
-                    enabled = isFormFill,
-                    onClick = {onNext()}
-                ) {
-                    Text("Finalizar")
-                }
-                Spacer(modifier = Modifier.height(450.dp))
-
+                Text(stringResource(id = R.string.finish))
             }
+
         }
     }
 }

@@ -3,5 +3,24 @@
     <string name="contact_data">Contact Data</string>
     <string name="personal_data">Personal Data</string>
     <string name="back_button">Back</string>
+    <string name="names">Name</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="education">Education</string>
+    <string name="lastName">Last name</string>
+    <string name="gender">Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="birth">Birth date</string>
+    <string name="primary">Primary School</string>
+    <string name="high">High School</string>
+    <string name="university">University</string>
+    <string name="other">Other</string>
+    <string name="change">Change</string>
+    <string name="next">Next</string>
+    <string name="phone">Phone</string>
+    <string name="email">e-mail</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="address">Address</string>
+    <string name="finish">Finish</string>
 </resources>
